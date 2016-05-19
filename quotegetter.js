@@ -20,7 +20,7 @@ request({
     title = quote.title;
     background = quote.background;
 
-    var greetText = "Here's the " + title.toLowerCase() + '\n    \"' + line + '\"\n    ~ ' + author + "\n";
+    var greetText = "Here's the " + title.toLowerCase() + '\n    \"' + line.split("\r\n").join("\r\n    ") + '\"\n    ~ ' + author + "\n";
 
     fs.writeFile("/home/user/.qotd/qotd.txt", greetText, function(err) {
         if (err) throw err;
